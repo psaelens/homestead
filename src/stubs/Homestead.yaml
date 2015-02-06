@@ -9,12 +9,16 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Code
-      to: /home/vagrant/Code
+    - map: ~/Projects/Neteo/neteo-webapp
+      to: /home/vagrant/neteo-webapp
+    - map: ~/Projects/Neteo/neteo-core
+      to: /home/vagrant/neteo-core
 
 sites:
-    - map: homestead.app
-      to: /home/vagrant/Code/Laravel/public
+    - map: neteo-webapp.app
+      to: /home/vagrant/neteo-webapp/public
+    - map: neteo-core.app
+      to: /home/vagrant/neteo-core/public
 
 databases:
     - homestead
