@@ -10,6 +10,7 @@ echo "Homestead initialized!"
 
 mkdir -p ~/Projects/Neteo
 
+cd ~/Projects/Neteo
 git clone git@bitbucket.org:psaelens/neteo-core.git
 git clone git@bitbucket.org:psaelens/neteo-webapp.git
 
