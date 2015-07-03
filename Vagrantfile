@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   	# Provision MongoDB
   	config.vm.provision "shell", path: "https://raw.githubusercontent.com/fideloper/Vaprobash/master/scripts/mongodb.sh", args: "true"
 
+    # Install packages required by neteo
+    config.vm.provision "shell", path: "install-neteo-packages.sh"
+
 	if File.exists? afterScriptPath then
 		config.vm.provision "shell", path: afterScriptPath
 	end
