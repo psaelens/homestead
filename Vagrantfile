@@ -19,8 +19,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   	# Provision MongoDB
   	config.vm.provision "shell", path: "https://raw.githubusercontent.com/fideloper/Vaprobash/master/scripts/mongodb.sh", args: "true"
 
+    # Provision Redis (without journaling and persistence)
+    config.vm.provision "shell", path: "https://raw.githubusercontent.com/fideloper/Vaprobash/master/scripts/redis.sh", args: "true" 
+
     # Install packages required by neteo
     config.vm.provision "shell", path: "install-neteo-packages.sh"
+
+    # Configure neteo dependencies
+    config.vm.provision "shell", path: "neteo-webapp-config.sh"    
+    config.vm.provision "shell", path: "nmap-config.sh"
+    config.vm.provision "shell", path: "supervisor-config.sh"
+    config.vm.provision "shell", path: "websocket-server.sh"
 
 	if File.exists? afterScriptPath then
 		config.vm.provision "shell", path: afterScriptPath
