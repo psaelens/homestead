@@ -13,5 +13,5 @@
 
   for package in ${packages[*]}
   do
-    sudo apt-get install $package
+    sudo apt-get -y install $package
   done
